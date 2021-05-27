@@ -55,15 +55,17 @@ async function routes(fastify, options) {
     index: false,
   });
 
-  fastify.get("/api/main", async (request, reply) => {
-    return reply.sendFile("api.html", path.join(__dirname, "..", "view"));
-  });
-
-  fastify.get("/", async (request, reply) => {
+ fastify.get("/", async (request, reply) => {
     return reply.sendFile(
       "index.html",
       path.join(__dirname, "..", "client", "build")
     );
   });
+
+  fastify.get("/api/main", async (request, reply) => {
+    return reply.sendFile("api.html", path.join(__dirname, "..", "view"));
+  });
+
+ 
 }
 module.exports = routes;

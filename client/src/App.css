@@ -2,19 +2,24 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Login{
+  color:darkred;
+  border: 5px dotted black;
+  height: 100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Content{
+  color:blueviolet;
+  border: 5px solid black;
 }
+
+.flexbox{
+  display: flex;
+}
+
 
 .App-header {
-  background-color: #282c34;
+  background-color: #4e70b4;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
