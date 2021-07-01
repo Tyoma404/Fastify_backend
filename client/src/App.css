@@ -8,15 +8,79 @@
   height: 100px;
 }
 
-.Content{
-  color:blueviolet;
-  border: 5px solid black;
-}
-
 .flexbox{
   display: flex;
 }
 
+.header{
+  display: grid;
+  grid-template-columns: 10% 20% 60% 10%;
+  background-color: blue;
+  min-height: 70px;
+}
+
+.logo{
+  width: 50px;
+}
+
+.logo_container{
+  padding: 0;
+  border-right: 2px dotted black;
+ 
+}
+
+.menu{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menu button{
+  max-height: 40px;
+}
+
+.main_container{
+  margin: auto 10%;
+  min-height: 200px;
+  background-color: red;
+}
+
+.footer{
+  min-height: 50px;
+  background-color: black;
+}
+
+.cont{
+  margin: 0;
+  padding: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cont li{
+  width: 300px;
+  padding: 5px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  border: 2px solid black;
+}
+
+.cont li:hover{
+  background-color: gray;
+}
+
+.cont li img{
+  width: 100px;
+  margin: 10px;
+}
+
+.cont li h3{
+  margin: 10px;
+}
 
 .App-header {
   background-color: #4e70b4;

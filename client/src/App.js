@@ -3,6 +3,8 @@ import React from "react";
 import Login from "./components/Login"
 import Content from "./components/Content"
 
+import { useState } from "react"
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,46 +13,65 @@ import {
 } from "react-router-dom";
 import { Redirect } from 'react-router'
 
+
+
 function App() {
+
+
+const [isLogged, setLogged] = useState(false)
+
+const [urls, setUrls] = useState(["photo_2021-05-12_08-30-18.jpg"])
+
+const logHandler = ()=> {
+  setLogged(!isLogged)
+  if(!isLogged) getUrls()
+  
+}
+
+
+async function getUrls(){
+  console.log("got urls")
+}
 
 //<Redirect to="/login"/> 
   return (
     <div className="App">
  
     <Router>
-    
-
-          <ul>  
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/content">Content</Link>
-            </li>
-          </ul>
+    <div className="header">
+  <div></div>
+    <div className="logo_container"><img src="https://e7.pngegg.com/pngimages/448/766/png-clipart-question-mark-computer-icons-others-text-logo.png" alt="" class="logo"/></div>
+    <div className="menu">
+      <button>Button</button>
+      <button>Button</button>
+    <Login logHandler={logHandler} logged={isLogged}/>
+    </div>
+    <div></div>
+    </div>
+  
 
           <Switch>
 
-          <div class="Flexbox">
+          {/* <div class="Flexbox"> */}
 
           
-          <div className="Login">
+          {/*  <div className="Login">
           <Route path="/login">
             
               <Login />
-            
-          </Route></div>
+              </Route>  
+         </div> */}
 
 
           <div className="Content">
 
          <Route path="/content">
             
-            <Content />
+            <Content imgUrls={urls}/>
             
           </Route></div>
 
-          </div>
+          {/* </div> */}
         </Switch>
 
       
